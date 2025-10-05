@@ -1,0 +1,48 @@
+/* базовые стили для popover */
+.popover {
+    position: absolute; /* позиционируем в px */
+    max-width: 260px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+    }
+    .popover .popover-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+    }
+    .popover .popover-content {
+    font-size: 14px;
+    line-height: 1.3;
+    }
+    /* стрелка сверху */
+    .popover::before {
+    content: '';
+    position: absolute;
+    top: -8px; /* стрелка сверху */
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,0.05));
+    }
+    .popover::after {
+    /* тонкая граница под стрелкой */
+    content: '';
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid rgba(0,0,0,0.08);
+    z-index: -1;
+    }
+    
+    
+    /* стили для триггеров */
+    .js-popover-trigger { padding: 8px 12px; cursor: pointer; }
